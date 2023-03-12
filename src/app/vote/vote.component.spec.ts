@@ -37,15 +37,15 @@ describe('VoteComponent', () => {
     expect(product.dislikes).toBe(1);
   });
 
-  it('should return 1 when likes and dislikes reach 10', () => {
+  it('should return true when likes and dislikes reach 10', () => {
     const product = { id: 1, name: 'Noodles', totalVotes: 0, likes: 5, dislikes: 5, img: 'https://images.pexels.com/photos/1907228/pexels-photo-1907228.jpeg?auto=compress&cs=tinysrgb&w=600' };
     const result = component.totalVotes(product);
-    expect(result).toBe(1);
+    expect(result).toBe(true);
   });
 
-  it('should return 0 when likes and dislikes are less than 10', () => {
+  it('should return false when likes and dislikes are less than 10', () => {
     const product = { id: 1, name: 'Noodles', totalVotes: 0, likes: 3, dislikes: 2, img: 'https://images.pexels.com/photos/1907228/pexels-photo-1907228.jpeg?auto=compress&cs=tinysrgb&w=600' };
     const result = component.totalVotes(product);
-    expect(result).toBe(0);
+    expect(result).toBe(false);
   });
 });
